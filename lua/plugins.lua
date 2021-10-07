@@ -28,6 +28,7 @@ return require('packer').startup({function()
     use 'lewis6991/gitsigns.nvim'
     use 'sindrets/diffview.nvim'
     use 'f-person/git-blame.nvim'
+    use 'tpope/vim-fugitive'
 
     -- Comments
     use 'terrortylor/nvim-comment'
@@ -64,6 +65,9 @@ return require('packer').startup({function()
     -- Matchup
     use 'andymass/vim-matchup'
 
+    -- Autosave
+    use "Pocco81/AutoSave.nvim"
+
     -- UI
     -- Dashboard
     use "glepnir/dashboard-nvim"
@@ -77,13 +81,21 @@ return require('packer').startup({function()
     -- Feline
     use 'famiu/feline.nvim'
 
-    -- Colorizer
+    -- Rainbow
     use 'norcalli/nvim-colorizer.lua'
+    use 'p00f/nvim-ts-rainbow'
 
     -- Indent blankline
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- TODO LSP
+    -- Lspconfig
+    use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
+
+    -- Nvim cmp
+    use 'hrsh7th/nvim-cmp'
+
     -- DAP
     use 'mfussenegger/nvim-dap'
     use 'Pocco81/DAPInstall.nvim'
@@ -91,6 +103,12 @@ return require('packer').startup({function()
     -- TODO
     -- Search and replace
     -- use 'windwp/nvim-spectre'
+    -- Codi
+    -- use 'metakirby5/codi.vim'
+    -- Markdown preview
+    -- use 'iamcco/markdown-preview.nvim'
+    -- Bracey
+    -- use 'turbio/bracey.vim'
 
 
 end,

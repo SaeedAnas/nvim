@@ -13,6 +13,7 @@ require 'core.git'
 require 'core.tree' 
 require 'core.treesitter'
 require 'core.comment'
+require 'core.autosave'
 require 'core.lightspeed'
 require 'core.others'
 
@@ -24,3 +25,5 @@ require 'ui.color'
 require 'ui.indent'
 
 -- lsp plugins
+require 'lsp.lsp'
+require 'lsp.nvim-cmp'

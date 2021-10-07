@@ -24,8 +24,10 @@ return require('packer').startup({function()
     -- Impatient
     use 'lewis6991/impatient.nvim'
 
-    -- Gitsigns
+    -- Git
     use 'lewis6991/gitsigns.nvim'
+    use 'sindrets/diffview.nvim'
+    use 'f-person/git-blame.nvim'
 
     -- Comments
     use 'terrortylor/nvim-comment'
@@ -46,8 +48,12 @@ return require('packer').startup({function()
     -- Autopairs
     use 'windwp/nvim-autopairs'
 
-    -- Hop
-    use 'phaazon/hop.nvim'
+    -- TODO Hop or lightspeed
+    -- use 'phaazon/hop.nvim'
+    use 'ggandor/lightspeed.nvim'
+
+    -- Targets
+    use 'wellle/targets.vim'
 
     -- Project
     use "ahmedkhalf/project.nvim"
@@ -78,6 +84,14 @@ return require('packer').startup({function()
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- TODO LSP
+    -- DAP
+    use 'mfussenegger/nvim-dap'
+    use 'Pocco81/DAPInstall.nvim'
+
+    -- TODO
+    -- Search and replace
+    -- use 'windwp/nvim-spectre'
+
 
 end,
 config = {

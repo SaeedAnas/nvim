@@ -1,5 +1,5 @@
 -- Hop
-require'hop'.setup {keys = 'etovxqpdygfblzhckisuran', term_seq_bias = 0.5}
+-- require'hop'.setup {keys = 'etovxqpdygfblzhckisuran', term_seq_bias = 0.5}
 
 -- Better Escape
 require("better_escape").setup {}

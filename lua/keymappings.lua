@@ -51,3 +51,13 @@ cmd 'vnoremap P "0P'
 
 -- Rnvimr
 bind('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
+
+
+-- hop nvim
+bind('n', 'S', ":HopWord<cr>", {silent = true})
+cmd([[
+	nnoremap <silent> * :HopWord<CR>
+	nnoremap <silent> s :HopChar2<CR>
+	nnoremap <silent> f :HopChar1<CR>
+	nnoremap <silent> ? :HopPattern<CR>
+]])

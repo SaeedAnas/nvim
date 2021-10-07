@@ -5,6 +5,8 @@ local bo = vim.bo
 cmd 'set iskeyword+=-' -- treat dash separated words as a word text object
 cmd 'set shortmess+=c' -- Don't pass messages to |ins-completion-menu|.
 cmd 'set inccommand=split' -- Make substitution work in realtime
+cmd 'set formatoptions-=cro' -- Turn off automatic comment
+vim.cmd('set formatoptions-=cro')
 o.hidden = true -- Required to keep multiple buffers open multiple buffers
 o.title = true
 o.titlestring = '%<%F%=%l/%L - nvim'
@@ -39,3 +41,4 @@ cmd 'filetype plugin on' -- filetype detection
 o.guifont = 'FiraCode Nerd Font Mono:h12'
 o.scrolloff = 8
 o.sidescrolloff = 8
+

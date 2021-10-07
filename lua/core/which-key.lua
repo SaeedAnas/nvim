@@ -50,6 +50,10 @@ local default_opts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', default_opts)
 vim.g.mapleader = ' '
 
+-- Comments
+vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", default_opts)
+vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", default_opts)
+
 -- Which-key mappings
 local mappings = {
     ["f"] = {'<cmd>Telescope find_files<cr>', 'Find files'},
@@ -58,8 +62,22 @@ local mappings = {
     ["H"] = {'<cmd>set hlsearch!<cr>', 'No Highlight'},
     ["."] = {'<cmd>e $HOME/.config/nvim/init.lua<cr>', 'Open config'},
     ["e"] = {'<cmd>NvimTreeToggle<cr>', 'Filetree'},
-    ["/"] = {'<cmd>RnvimrToggle<cr>', 'Ranger'},
+    ["r"] = {'<cmd>RnvimrToggle<cr>', 'Ranger'},
     ["p"] = {'<cmd>Telescope projects<cr>', 'Projects'},
+    ["/"] = "Comment",
+    s = {
+        name = "+Search",
+        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+        c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
+        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
+        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
+        f = {"<cmd>Telescope find_files<cr>", "Find File"},
+        m = {"<cmd>Telescope marks<cr>", "Marks"},
+        M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
+        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
+        R = {"<cmd>Telescope registers<cr>", "Registers"},
+        t = {"<cmd>Telescope live_grep<cr>", "Text"},
+    }
 }
 
 wk.register(mappings, opts)

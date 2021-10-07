@@ -1,5 +1,5 @@
 -- Nvim-Tree
-nvimtree = require('nvim-tree')
+local nvimtree = require('nvim-tree')
 
 local g = vim.g
 

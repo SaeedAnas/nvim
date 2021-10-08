@@ -1,11 +1,11 @@
-local bind = vim.api.nvim_set_keymap
+local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 
 -- better window movement
-bind('n', '<C-h>', '<C-w>h', {silent = true})
-bind('n', '<C-j>', '<C-w>j', {silent = true})
-bind('n', '<C-k>', '<C-w>k', {silent = true})
-bind('n', '<C-l>', '<C-w>l', {silent = true})
+map("n", "<C-h>", "<C-w>h", { silent = true })
+map("n", "<C-j>", "<C-w>j", { silent = true })
+map("n", "<C-k>", "<C-w>k", { silent = true })
+map("n", "<C-l>", "<C-w>l", { silent = true })
 
 -- because I can
 cmd([[
@@ -28,33 +28,31 @@ cmd([[
 ]])
 
 -- Resize with arrows
-bind('n', '<C-Up>', ':resize -2<CR>', {silent = true})
-bind('n', '<C-Down>', ':resize +2<CR>', {silent = true})
-bind('n', '<C-Left>', ':vertical resize -2<CR>', {silent = true})
-bind('n', '<C-Right>', ':vertical resize +2<CR>', {silent = true})
+map("n", "<C-Up>", ":resize -2<CR>", { silent = true })
+map("n", "<C-Down>", ":resize +2<CR>", { silent = true })
+map("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true })
+map("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 
 -- better indenting
-bind('v', '<', '<gv', {noremap = true, silent = true})
-bind('v', '>', '>gv', {noremap = true, silent = true})
+map("v", "<", "<gv", { noremap = true, silent = true })
+map("v", ">", ">gv", { noremap = true, silent = true })
 
 -- Tab switch buffer
-bind('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
-bind('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+map("n", "<TAB>", ":bnext<CR>", { noremap = true, silent = true })
+map("n", "<S-TAB>", ":bprevious<CR>", { noremap = true, silent = true })
 
 -- Move selected line / block of text in visual mode
-bind('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
-bind('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
+map("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
+map("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
 
-
-cmd 'vnoremap p "0p'
-cmd 'vnoremap P "0P'
+cmd('vnoremap p "0p')
+cmd('vnoremap P "0P')
 
 -- Rnvimr
-bind('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
-
+map("n", "-", ":RnvimrToggle<CR>", { noremap = true, silent = true })
 
 -- hop nvim
--- bind('n', 'S', ":HopWord<cr>", {silent = true})
+-- map('n', 'S', ":HopWord<cr>", {silent = true})
 -- cmd([[
 -- 	nnoremap <silent> * :HopWord<CR>
 -- 	nnoremap <silent> s :HopChar2<CR>

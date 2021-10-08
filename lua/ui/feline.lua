@@ -244,7 +244,7 @@ function M.setup()
 				hl = {
 					fg = c.bg,
 				},
-			}
+			},
 		},
 	}
 

@@ -41,3 +41,5 @@ cmd("filetype plugin on") -- filetype detection
 o.guifont = "FiraCode Nerd Font Mono:h12"
 o.scrolloff = 8
 o.sidescrolloff = 8
+cmd("set lazyredraw")
+cmd("set ttyfast")

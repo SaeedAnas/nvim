@@ -2,6 +2,7 @@ local M = {}
 local lsp = require("feline.providers.lsp")
 local git = require("feline.providers.git")
 local vi_mode_utils = require("feline.providers.vi_mode")
+local icon = require("nvim-web-devicons")
 ---------------------------------PROPERTIES--------------------------------- {{{
 M.components = {
 	active = {},
@@ -56,7 +57,7 @@ function M.setup()
 		return
 	end
 
-	local c = require("ui.colors")
+	local c = require("ui.color").colors
 	---------------------------------COMPONENTS--------------------------------- {{{
 	M.vi_mode_colors = {
 		NORMAL = c.green,
@@ -117,6 +118,18 @@ function M.setup()
 				},
 			},
 			left_sep = " ",
+			hl = function()
+				local val = {}
+
+				local filename = vim.fn.expand("%")
+				local filetype = vim.bo.filetype
+
+				local icon, color = icon.get_icon_color(filename, filetype, { default = true })
+
+				val.fg = color
+
+				return val
+			end,
 		},
 		{
 			provider = ">",
@@ -129,24 +142,36 @@ function M.setup()
 			enabled = function(winid)
 				return there_is_width(winid)
 			end,
+			hl = {
+				fg = c.red,
+			},
 		},
 		{
 			provider = "diagnostic_warnings",
 			enabled = function(winid)
 				return there_is_width(winid)
 			end,
+			hl = {
+				fg = c.yellow,
+			},
 		},
 		{
 			provider = "diagnostic_hints",
 			enabled = function(winid)
 				return there_is_width(winid)
 			end,
+			hl = {
+				fg = c.blue,
+			},
 		},
 		{
 			provider = "diagnostic_info",
 			enabled = function(winid)
 				return there_is_width(winid)
 			end,
+			hl = {
+				fg = c.blue,
+			},
 		},
 		{
 			provider = "lsp_client_names",
@@ -204,6 +229,10 @@ function M.setup()
 				return git.git_info_exists(winid) and there_is_width(winid)
 			end,
 			icon = " +",
+
+			hl = {
+				fg = c.green,
+			},
 		},
 		{
 			provider = "git_diff_changed",
@@ -211,6 +240,9 @@ function M.setup()
 				return git.git_info_exists(winid) and there_is_width(winid)
 			end,
 			icon = " ~",
+			hl = {
+				fg = c.yellow,
+			},
 		},
 		{
 			provider = "git_diff_removed",
@@ -218,6 +250,9 @@ function M.setup()
 				return git.git_info_exists(winid) and there_is_width(winid)
 			end,
 			icon = " -",
+			hl = {
+				fg = c.red,
+			},
 		},
 		{
 			provider = " < ",
@@ -231,6 +266,14 @@ function M.setup()
 		},
 		{
 			provider = "scroll_bar",
+			hl = function()
+				local val = {}
+
+				val.fg = vi_mode_utils.get_mode_color()
+				val.bg = "NONE"
+
+				return val
+			end,
 		},
 	}
 	---------------------------------------------------------------------------- }}}

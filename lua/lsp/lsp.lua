@@ -2,6 +2,19 @@ local nvim_lsp = require("lspconfig")
 local lsp_signature = require("lsp_signature")
 local u = require("utils")
 
+-- Change lsp icons in gutter
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+for type, icon in pairs(signs) do
+	local hl = "LspDiagnosticsSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 250
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]])
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -72,16 +85,29 @@ end
 --   }
 -- end
 
+local function setup_server(server)
+	require("lspconfig")[server].setup({
+		on_attach = function(client, bufnr)
+			client.resolved_capabilities.document_formatting = false
+			on_attach(client, bufnr)
+		end,
+		flags = {
+			debounce_text_changes = 150,
+		},
+	})
+end
+
 local function setup_servers()
 	require("lspinstall").setup()
 	local servers = require("lspinstall").installed_servers()
 	for _, server in pairs(servers) do
-		require("lspconfig")[server].setup({
-			on_attach = on_attach,
-			flags = {
-				debounce_text_changes = 150,
-			},
-		})
+		setup_server(server)
+		-- require("lspconfig")[server].setup({
+		-- 	on_attach = on_attach,
+		-- 	flags = {
+		-- 		debounce_text_changes = 150,
+		-- 	},
+		-- })
 	end
 end
 
@@ -96,10 +122,16 @@ end
 local null_ls = require("null-ls")
 
 local sources = {
+	-- null_ls.builtins.formatting.eslint_d,
+	null_ls.builtins.formatting.black,
+	null_ls.builtins.formatting.clang_format.with({
+		filetypes = { "c", "cpp", "cs" },
+	}),
 	null_ls.builtins.formatting.prettier,
 	null_ls.builtins.diagnostics.write_good,
 	null_ls.builtins.code_actions.gitsigns,
 	null_ls.builtins.formatting.stylua,
+	null_ls.builtins.formatting.rustfmt,
 }
 
 null_ls.config({

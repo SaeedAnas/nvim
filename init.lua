@@ -14,16 +14,15 @@ require("core.tree")
 require("core.treesitter")
 require("core.comment")
 -- require("core.autosave")
+-- require("core.tmux")
 require("core.lightspeed")
 require("core.others")
 
 -- ui plugins
-require("ui.statusline")
 require("ui.dashboard")
-require("ui.bufferline")
-require("ui.color")
-require("ui.indent")
+require("ui.buffer")
 
 -- lsp plugins
 require("lsp.lsp")
 require("lsp.nvim-cmp")
+require("lsp.rust")

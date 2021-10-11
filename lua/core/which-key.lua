@@ -64,6 +64,7 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Filetree" },
 	["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 	["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
+	["w"] = { "<cmd>w<cr>", "write" },
 	["/"] = "Comment",
 	s = {
 		name = "+Search",

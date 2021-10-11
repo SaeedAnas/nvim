@@ -31,6 +31,7 @@ return require("packer").startup({
 		use("f-person/git-blame.nvim")
 		use("tpope/vim-fugitive")
 
+		use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
 		-- Comments
 		use("terrortylor/nvim-comment")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -42,6 +43,9 @@ return require("packer").startup({
 		-- Filetree
 		use("kyazdani42/nvim-tree.lua")
 		use("kevinhwang91/rnvimr")
+
+		-- tmux
+		use("aserowy/tmux.nvim")
 
 		-- Utils
 		-- Better escape
@@ -77,11 +81,14 @@ return require("packer").startup({
 		-- Bufferline
 		use("akinsho/bufferline.nvim")
 
-		-- Theme
+		-- Colorschemes
 		use("olimorris/onedark.nvim")
+		use("tanvirtin/monokai.nvim")
+		use("RRethy/nvim-base16")
 
-		-- Feline
+		-- Statusline
 		use("famiu/feline.nvim")
+		-- use("glepnir/galaxyline.nvim")
 
 		-- Rainbow
 		use("norcalli/nvim-colorizer.lua")
@@ -89,6 +96,9 @@ return require("packer").startup({
 
 		-- Indent blankline
 		use("lukas-reineke/indent-blankline.nvim")
+
+		-- Smooth Scroll
+		use("karb94/neoscroll.nvim")
 
 		-- TODO LSP
 		-- Lspconfig
@@ -120,14 +130,17 @@ return require("packer").startup({
 		use("Pocco81/DAPInstall.nvim")
 
 		-- Language Specific
+		-- Rust
+		use("simrat39/rust-tools.nvim")
 
-		-- TODO
+		-- Java
+		use("mfussenegger/nvim-jdtls")
+
+		-- TODO:
 		-- Search and replace
 		-- use 'windwp/nvim-spectre'
 		-- Codi
 		-- use 'metakirby5/codi.vim'
-		-- Markdown preview
-		-- use 'iamcco/markdown-preview.nvim'
 		-- Bracey
 		-- use 'turbio/bracey.vim'
 	end,

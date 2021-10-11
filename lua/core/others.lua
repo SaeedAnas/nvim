@@ -12,3 +12,6 @@ require("project_nvim").setup({})
 
 -- Autopairs
 require("nvim-autopairs").setup({})
+
+-- Smooth Scroll
+-- require("neoscroll").setup()

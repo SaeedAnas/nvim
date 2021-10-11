@@ -1,23 +1,13 @@
--- Colorscheme
-local onedark = require("onedark")
-onedark.setup({
-	theme = "onedark",
-	styles = {
-		comments = "italic",
-		functions = "NONE",
-		keywords = "bold,italic",
-		strings = "NONE",
-		variables = "NONE",
-	},
-})
-onedark.load()
+local M = {}
 
--- Colorizer
-require("colorizer").setup({
-	"lua",
-	"css",
-	"javascript",
-	html = {
-		mode = "foreground",
-	},
-})
+M.colorsheme = "monokai"
+
+M.module = require("ui.colors." .. M.colorsheme)
+
+M.setup = function()
+	M.module.setup()
+end
+
+M.colors = M.module.colors()
+
+return M

@@ -45,7 +45,7 @@ return require("packer").startup({
 		use("kevinhwang91/rnvimr")
 
 		-- tmux
-		use("aserowy/tmux.nvim")
+		-- use("aserowy/tmux.nvim")
 
 		-- Utils
 		-- Better escape
@@ -88,7 +88,7 @@ return require("packer").startup({
 
 		-- Statusline
 		use("famiu/feline.nvim")
-		-- use("glepnir/galaxyline.nvim")
+		use("nvim-lua/lsp-status.nvim")
 
 		-- Rainbow
 		use("norcalli/nvim-colorizer.lua")
@@ -100,7 +100,7 @@ return require("packer").startup({
 		-- Smooth Scroll
 		use("karb94/neoscroll.nvim")
 
-		-- TODO LSP
+		-- TODO: LSP
 		-- Lspconfig
 		use("neovim/nvim-lspconfig")
 		use("kabouzeid/nvim-lspinstall")

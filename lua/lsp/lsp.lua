@@ -1,6 +1,9 @@
 local nvim_lsp = require("lspconfig")
 local lsp_signature = require("lsp_signature")
 local u = require("utils")
+local lsp_status = require("lsp-status")
+
+lsp_status.register_progress()
 
 -- Change lsp icons in gutter
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
@@ -37,6 +40,9 @@ local on_attach = function(client, bufnr)
 		bufnr,
 	})
 
+	-- Add statusline support
+	lsp_status.on_attach(client)
+
 	u.lua_command("LspFormatting", "vim.lsp.buf.formatting()")
 	u.lua_command("LspHover", "vim.lsp.buf.hover()")
 	u.lua_command("LspRename", "vim.lsp.buf.rename()")
@@ -54,7 +60,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_set_keymap("n", "<C-p>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	-- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
 	-- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 	-- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -94,6 +100,7 @@ local function setup_server(server)
 		flags = {
 			debounce_text_changes = 150,
 		},
+		capabilities = lsp_status.capabilities,
 	})
 end
 
@@ -140,4 +147,5 @@ null_ls.config({
 
 require("lspconfig")["null-ls"].setup({
 	on_attach = on_attach,
+	capabilities = lsp_status.capabilities,
 })

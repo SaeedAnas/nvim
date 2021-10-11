@@ -2,10 +2,10 @@ local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 
 -- better window movement
-map("n", "<C-h>", "<C-w>h", { silent = true })
-map("n", "<C-j>", "<C-w>j", { silent = true })
-map("n", "<C-k>", "<C-w>k", { silent = true })
-map("n", "<C-l>", "<C-w>l", { silent = true })
+-- map("n", "<C-h>", "<C-w>h", { silent = true })
+-- map("n", "<C-j>", "<C-w>j", { silent = true })
+-- map("n", "<C-k>", "<C-w>k", { silent = true })
+-- map("n", "<C-l>", "<C-w>l", { silent = true })
 
 -- because I can
 cmd([[

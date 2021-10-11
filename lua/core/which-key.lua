@@ -82,3 +82,37 @@ local mappings = {
 }
 
 wk.register(mappings, opts)
+
+-- File specific
+vim.g.maplocalleader = ","
+
+local u = require("utils")
+u.augroup({ comment = { { "VimEnter,BufEnter,BufRead", "*", "lua SetFileKeybinds()" } } })
+function SetFileKeybinds()
+	local local_opts = {
+		mode = "n", -- NORMAL mode
+		prefix = "<localleader>",
+		buffer = vim.api.nvim_get_current_buf(), -- local buffer mappings
+		silent = true, -- use `silent` when creating keymaps
+		noremap = true, -- use `noremap` when creating keymaps
+		nowait = false, -- use `nowait` when creating keymaps
+	}
+	local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
+	if fileTy == "rust" then
+		wk.register({
+			["c"] = { "<cmd>RustOpenCargo<cr>", "open cargo" },
+		}, local_opts)
+	elseif fileTy == "lua" then
+		wk.register({
+			["t"] = { "test-lua", "test-lua" },
+		}, local_opts)
+	elseif fileTy == "python" then
+		wk.register({
+			["t"] = { "test-python", "test-python" },
+		}, local_opts)
+	elseif fileTy == "java" then
+		wk.register({
+			["t"] = { "test-java", "test-java" },
+		}, local_opts)
+	end
+end

@@ -1,6 +1,6 @@
 local M = {}
 
-M.colorsheme = "gruvbox"
+M.colorsheme = "onedark"
 
 M.module = require("ui.colors." .. M.colorsheme)
 

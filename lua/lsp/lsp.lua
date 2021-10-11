@@ -109,12 +109,6 @@ local function setup_servers()
 	local servers = require("lspinstall").installed_servers()
 	for _, server in pairs(servers) do
 		setup_server(server)
-		-- require("lspconfig")[server].setup({
-		-- 	on_attach = on_attach,
-		-- 	flags = {
-		-- 		debounce_text_changes = 150,
-		-- 	},
-		-- })
 	end
 end
 
@@ -138,7 +132,7 @@ local sources = {
 	null_ls.builtins.diagnostics.write_good,
 	null_ls.builtins.code_actions.gitsigns,
 	null_ls.builtins.formatting.stylua,
-	null_ls.builtins.formatting.rustfmt,
+	-- null_ls.builtins.formatting.rustfmt,
 }
 
 null_ls.config({

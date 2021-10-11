@@ -45,7 +45,7 @@ return require("packer").startup({
 		use("kevinhwang91/rnvimr")
 
 		-- tmux
-		-- use("aserowy/tmux.nvim")
+		use("aserowy/tmux.nvim")
 
 		-- Utils
 		-- Better escape

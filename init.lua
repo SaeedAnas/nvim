@@ -13,12 +13,12 @@ require("core.git")
 require("core.tree")
 require("core.treesitter")
 require("core.comment")
+require("core.tmux")
 require("core.lightspeed")
 require("core.others")
 
 -- Not using
 -- require("core.autosave")
--- require("core.tmux")
 
 -- ui plugins
 require("ui.dashboard")

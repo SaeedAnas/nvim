@@ -56,4 +56,9 @@ M.lua_command = function(name, fn)
 	M.command(name, "lua " .. fn)
 end
 
+M.random = function(number)
+	math.randomseed(tonumber(tostring(os.time()):reverse():sub(1, 6)))
+	return math.random() and math.random() and math.random() and math.random(number)
+end
+
 return M

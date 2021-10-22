@@ -17,9 +17,6 @@ require("core.tmux")
 require("core.lightspeed")
 require("core.others")
 
--- Not using
--- require("core.autosave")
-
 -- ui plugins
 require("ui.dashboard")
 require("ui.buffer")

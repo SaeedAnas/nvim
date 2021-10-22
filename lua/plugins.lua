@@ -30,8 +30,9 @@ return require("packer").startup({
 		use("sindrets/diffview.nvim")
 		use("f-person/git-blame.nvim")
 		use("tpope/vim-fugitive")
+		use("TimUntersberger/neogit")
 
-		use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
+		use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", opt = false, cmd = "MarkdownPreview" })
 		-- Comments
 		use("terrortylor/nvim-comment")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -82,9 +83,10 @@ return require("packer").startup({
 		use("akinsho/bufferline.nvim")
 
 		-- Colorschemes
-		use("olimorris/onedark.nvim")
 		use("tanvirtin/monokai.nvim")
 		use("RRethy/nvim-base16")
+		use("navarasu/onedark.nvim")
+		use("folke/tokyonight.nvim")
 
 		-- Statusline
 		use("famiu/feline.nvim")

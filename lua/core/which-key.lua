@@ -64,8 +64,20 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Filetree" },
 	["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 	["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
-	["w"] = { "<cmd>w<cr>", "write" },
 	["/"] = "Comment",
+	["1"] = { "1gt", "Tab 1" },
+	["2"] = { "2gt", "Tab 2" },
+	["3"] = { "3gt", "Tab 3" },
+	["4"] = { "4gt", "Tab 4" },
+	["5"] = { "5gt", "Tab 5" },
+	["6"] = { "6gt", "Tab 6" },
+	["7"] = { "7gt", "Tab 7" },
+	["8"] = { "8gt", "Tab 8" },
+	["9"] = { "9gt", "Tab 9" },
+	["0"] = { "<cmd>tablast<cr>", "Last Tab" },
+	["t"] = { "<cmd>lua require('utils').newtab()<cr>", "New Tab" },
+	["q"] = { "<cmd>q<cr>", "quit" },
+	["Q"] = { "<cmd>qa!<cr>", "Quit all" },
 	s = {
 		name = "+Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -119,6 +131,10 @@ local mappings = {
 		x = { "<cmd>cclose<cr>", "Close Quickfix" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols" },
+	},
+	w = {
+		["="] = { "<C-w>=", "Equal" },
+		["t"] = { "<C-w>T", "Move to new Tab" },
 	},
 }
 

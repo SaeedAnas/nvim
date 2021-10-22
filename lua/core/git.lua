@@ -1,3 +1,5 @@
+require("neogit").setup({})
+
 require("gitsigns").setup({
 	signs = {
 		-- TODO add hl to colorscheme
@@ -5,7 +7,12 @@ require("gitsigns").setup({
 		change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
 		delete = { hl = "GitSignsDelete", text = "契", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
 		topdelete = { hl = "GitSignsDelete", text = "契", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-		changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+		changedelete = {
+			hl = "GitSignsChange",
+			text = "▎",
+			numhl = "GitSignsChangeNr",
+			linehl = "GitSignsChangeLn",
+		},
 	},
 	numhl = false,
 	linehl = false,
@@ -42,7 +49,7 @@ require("diffview").setup({
 		listing_style = "tree", -- One of 'list' or 'tree'
 		tree_options = { -- Only applies when listing_style is 'tree'
 			flatten_dirs = true,
-			folder_statuses = "always",  -- One of 'never', 'only_folded' or 'always'.
+			folder_statuses = "always", -- One of 'never', 'only_folded' or 'always'.
 		},
 	},
 	file_history_panel = {

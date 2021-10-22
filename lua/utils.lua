@@ -61,4 +61,41 @@ M.random = function(number)
 	return math.random() and math.random() and math.random() and math.random(number)
 end
 
+M.newtab = function()
+	vim.cmd("tabnew")
+	vim.cmd("Dashboard")
+end
+
+local function gui(group_settings)
+	if group_settings.bold then
+		return "bold"
+	elseif group_settings.underline then
+		return "underline"
+	elseif group_settings.undercurl then
+		return "undercurl"
+	elseif group_settings.italic then
+		return "italic"
+	elseif group_settings.reverse then
+		return "reverse"
+	else
+		return "NONE"
+	end
+end
+
+M.highlight = function(highlights)
+	for group_name, group_settings in pairs(highlights) do
+		local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
+		local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
+		local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
+		vim.cmd(
+			"highlight " .. group_name .. " " .. "gui=" .. gui(group_settings) .. " " .. fg .. " " .. bg .. " " .. sp
+		)
+	end
+end
+-- M.highlight = function(highlights)
+-- 	for group_name, group_settings in pairs(highlights) do
+-- 		vim.cmd("hi " .. group_name .. " guifg=" .. group_settings)
+-- 	end
+-- end
+
 return M

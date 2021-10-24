@@ -78,6 +78,7 @@ local mappings = {
 	["t"] = { "<cmd>lua require('utils').newtab()<cr>", "New Tab" },
 	["q"] = { "<cmd>q<cr>", "quit" },
 	["Q"] = { "<cmd>qa!<cr>", "Quit all" },
+	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 	s = {
 		name = "+Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

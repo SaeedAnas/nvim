@@ -15,6 +15,7 @@ require("core.treesitter")
 require("core.comment")
 require("core.tmux")
 require("core.lightspeed")
+require("core.zen")
 require("core.others")
 
 -- ui plugins
@@ -24,4 +25,5 @@ require("ui.buffer")
 -- lsp plugins
 require("lsp.lsp")
 require("lsp.nvim-cmp")
-require("lsp.rust")
+require("lsp.snippets")
+require("lsp.lang")

@@ -32,7 +32,10 @@ return require("packer").startup({
 		use("tpope/vim-fugitive")
 		use("TimUntersberger/neogit")
 
-		use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", opt = false, cmd = "MarkdownPreview" })
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = "cd app && yarn install",
+		})
 		-- Comments
 		use("terrortylor/nvim-comment")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -56,7 +59,7 @@ return require("packer").startup({
 		use("windwp/nvim-autopairs")
 		use("windwp/nvim-ts-autotag")
 
-		-- TODO Hop or lightspeed
+		-- TODO: Hop or lightspeed
 		-- use 'phaazon/hop.nvim'
 		use("ggandor/lightspeed.nvim")
 
@@ -72,8 +75,11 @@ return require("packer").startup({
 		-- Matchup
 		use("andymass/vim-matchup")
 
-		-- Autosave
-		use("Pocco81/AutoSave.nvim")
+		-- Multicursor (its nice on html ok)
+		use("mg979/vim-visual-multi")
+
+		-- Zen mode
+		use("folke/zen-mode.nvim")
 
 		-- UI
 		-- Dashboard
@@ -122,10 +128,7 @@ return require("packer").startup({
 		-- Snippets
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")
-		-- use 'hrsh7th/cmp-vsnip'
-		-- use 'hrsh7th/vim-vsnip'
-		-- use 'SirVer/ultisnips'
-		-- use 'quangnguyen30192/cmp-nvim-ultisnips'
+		use("rafamadriz/friendly-snippets")
 
 		-- DAP
 		use("mfussenegger/nvim-dap")
@@ -137,6 +140,9 @@ return require("packer").startup({
 
 		-- Java
 		use("mfussenegger/nvim-jdtls")
+
+		-- Org Mode
+		use({ "kristijanhusak/orgmode.nvim", branch = "tree-sitter" })
 
 		-- TODO:
 		-- Search and replace

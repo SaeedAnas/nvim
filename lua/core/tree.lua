@@ -50,7 +50,6 @@ g.nvim_tree_icons = {
 }
 
 nvimtree.setup({
-	lsp_diagnostics = false,
 	disable_netrw = true,
 	hijack_netrw = true,
 	ignore_ft_on_setup = { "dashboard" },
@@ -66,6 +65,9 @@ nvimtree.setup({
 		allow_resize = true,
 		side = "left",
 		width = 25,
+	},
+	diagnostics = {
+		enable = true,
 	},
 })
 

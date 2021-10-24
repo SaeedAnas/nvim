@@ -90,6 +90,9 @@ end
 --     }
 --   }
 -- end
+--
+local capabilities = lsp_status.capabilities
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local function setup_server(server)
 	require("lspconfig")[server].setup({
@@ -100,7 +103,7 @@ local function setup_server(server)
 		flags = {
 			debounce_text_changes = 150,
 		},
-		capabilities = lsp_status.capabilities,
+		capabilities = capabilities,
 	})
 end
 
@@ -141,4 +144,15 @@ null_ls.config({
 require("lspconfig")["null-ls"].setup({
 	on_attach = on_attach,
 	capabilities = lsp_status.capabilities,
+})
+
+-- Get rid of that pesky undefined global 'vim' warning
+nvim_lsp.lua.setup({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })

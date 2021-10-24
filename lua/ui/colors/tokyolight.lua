@@ -52,11 +52,7 @@ M.colors = {
 
 -- Colorscheme
 M.setup = function()
-	-- vim.g.tokyonight_sidebars = { "NvimTree" }
-	vim.g.tokyonight_italic_functions = true
-	-- vim.g.tokyonight_italic_comments = true
-	vim.g.tokyonight_italic_keywords = true
-	vim.g.tokyonight_italic_variables = true
+	vim.g.tokyonight_style = "day"
 	vim.cmd([[colorscheme tokyonight]])
 end
 

@@ -13,6 +13,7 @@ require("indent_blankline").setup({
 	char = "|",
 	buftype_exclude = { "terminal", "NvimTree" },
 	filetype_exclude = { "dashboard" },
+	show_current_context = true,
 })
 
 -- Colorizer

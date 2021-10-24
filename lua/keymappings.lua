@@ -48,6 +48,10 @@ map("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
 cmd('vnoremap p "0p')
 cmd('vnoremap P "0P')
 
+-- Replace all instances of the highlighted text
+cmd('vnoremap <C-r> "hy:%s/<C-r>h//g<left><left><left>')
+-- cmd('vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>')
+
 -- Rnvimr
 map("n", "-", ":RnvimrToggle<CR>", { noremap = true, silent = true })
 

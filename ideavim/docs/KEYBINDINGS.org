@@ -1,0 +1,506 @@
+#+TITLE: Key bindings
+
+This file contains all available key bindings.
+They are divided into the three modules: spacemacs, major and extra.
+
+The spacemacs module key bindings are alligned with the spacemacs develop branch, because the
+0.300 release is very near, but after that we plan to stay aligned with the
+master branch.
+
+* spacemacs
+
+** leader
+
+| Key binding | Description                   |
+|-------------+-------------------------------|
+| ~SPC SPC~   | Execute an action             |
+| ~SPC TAB~   | Last buffer                   |
+| ~SPC !~     | Open new terminal window      |
+| ~SPC '~     | Activate terminal window      |
+| ~SPC *~     | Show usages                   |
+| ~SPC ; ;~   | Comment lines                 |
+| ~SPC ?~     | Show key bindings             |
+| ~SPC /~     | Search in project files       |
+
+** applications
+
+| Key binding | Description              |
+|-------------+--------------------------|
+| ~SPC a k~   | Plugins marketplace      |
+| ~SPC a o t~ | Show TODOs               |
+| ~SPC a P~   | Show CPU usage           |
+| ~SPC a p~   | List processes           |
+| ~SPC a s~   | Open new terminal window |
+
+** buffers
+
+| Key binding | Description                        |
+|-------------+------------------------------------|
+| ~SPC b b~   | Recent files                       |
+| ~SPC b d~   | Close tab                          |
+| ~SPC b m~   | Show event log                     |
+| ~SPC b n~   | Next tab                           |
+| ~SPC b P~   | Copy clipboard to whole buffer     |
+| ~SPC b p~   | Previous tab                       |
+| ~SPC b s~   | New scratch buffer                 |
+| ~SPC b u~   | Reopen closed tab                  |
+| ~SPC b x~   | Close window (with its tabs)       |
+| ~SPC b Y~   | Copy whole buffer                  |
+| ~SPC b C-d~ | Close other tabs in current window |
+
+** colors
+
+| Key binding | Description |
+|-------------+-------------|
+| ~SPC C l~   | Pick color  |
+
+** compile/comments
+
+| Key binding | Description                                     |
+|-------------+-------------------------------------------------|
+| ~SPC c C~   | Compile selected file, package or module        |
+| ~SPC c c~   | Make project                                    |
+| ~SPC c l~   | Comment lines                                   |
+| ~SPC c m~   | Make module                                     |
+| ~SPC c p~   | Comment paragraph                               |
+| ~SPC c t~   | Comment from begin of buffer up to current line |
+| ~SPC c y~   | Copy and comment current line                   |
+
+** errors
+
+| Key binding | Description            |
+|-------------+------------------------|
+| ~SPC e L~   | Inspect code           |
+| ~SPC e l~   | List errors            |
+| ~SPC e N~   | Previous error         |
+| ~SPC e n~   | Next error             |
+| ~SPC e p~   | Previous error         |
+| ~SPC e R~   | Run inspection by name |
+| ~SPC e r~   | Resolve error          |
+| ~SPC e s~   | Inspection settings    |
+| ~SPC e x~   | Explain error          |
+
+** frame
+
+| Key binding | Description        |
+|-------------+--------------------|
+| ~SPC F o~   | Focus next project |
+
+** files
+
+| Key binding | Description           |
+|-------------+-----------------------|
+| ~SPC f b~   | Show bookmarks        |
+| ~SPC f e d~ | Settings              |
+| ~SPC f e R~ | Reload =~/.ideavimrc= |
+| ~SPC f F~   | Find files            |
+| ~SPC f f~   | Find files            |
+| ~SPC f g~   | Search in project     |
+| ~SPC f R~   | Rename file           |
+| ~SPC f r~   | Recent fles           |
+| ~SPC f S~   | Save all files        |
+| ~SPC f s~   | Save file             |
+| ~SPC f t~   | Project window        |
+| ~SPC f y y~ | Copy file path        |
+
+** git/versions control
+
+| Key binding | Description           |
+|-------------+-----------------------|
+| ~SPC g c~   | Git clone             |
+| ~SPC g f l~ | Show current file log |
+| ~SPC g i~   | Git init              |
+| ~SPC g s~   | Show local changes    |
+| ~SPC g v +~ | Update project        |
+| ~SPC g v g~ | Annotate              |
+| ~SPC g v l~ | Show log              |
+
+** help
+
+| Key binding | Description                          |
+|-------------+--------------------------------------|
+| ~SPC h k~   | Show key bindings                    |
+| ~SPC h d b~ | Show key bindings                    |
+| ~SPC h d k~ | Show key bindings                    |
+| ~SPC h p~   | Visit Intellij Plugins Repository    |
+| ~SPC h r~   | Visit Intellij documentation website |
+| ~SPC h SPC~ | Visit Intellij documentation website |
+
+** insertion
+
+| Key binding | Description                  |
+|-------------+------------------------------|
+| ~SPC i j~   | Insert line below            |
+| ~SPC i k~   | Insert line above            |
+| ~SPC i l p~ | Insert lorem ipsum paragraph |
+| ~SPC i l s~ | Insert lorem ipsum sentence  |
+| ~SPC i s~   | Insert snippet               |
+
+** jump/join/split
+
+| Key binding | Description                          |
+|-------------+--------------------------------------|
+| ~SPC j =~   | Reformat code                        |
+| ~SPC j D~   | Project window                       |
+| ~SPC j d~   | Project window                       |
+| ~SPC j j~   | Jump to character (AceJump required) |
+| ~SPC j l~   | Jump to line (AceJump required)      |
+| ~SPC j n~   | Insert new line and move down        |
+| ~SPC j o~   | Insert new line                      |
+
+** narrow/numbers
+
+| Key binding | Description      |
+|-------------+------------------|
+| ~SPC n +~   | Increment number |
+| ~SPC n =~   | Increment number |
+| ~SPC n -~   | Decrement number |
+
+** projects
+
+| Key binding | Description                            |
+|-------------+----------------------------------------|
+| ~SPC p !~   | Activate terminal window               |
+| ~SPC p a~   | Toggle between implementation and test |
+| ~SPC p b~   | Recent files                           |
+| ~SPC p h~   | Recent files                           |
+| ~SPC p r~   | Recent files                           |
+| ~SPC p c~   | Make project                           |
+| ~SPC p D~   | Project window                         |
+| ~SPC p t~   | Project window                         |
+| ~SPC p f~   | Find files                             |
+| ~SPC p I~   | Invalidate cache                       |
+| ~SPC p p~   | Recent projects                        |
+| ~SPC p R~   | Replace in path                        |
+| ~SPC p T~   | Rerun tests                            |
+| ~SPC p v~   | Show local changes                     |
+
+** quit
+
+| Key binding | Description                |
+|-------------+----------------------------|
+| ~SPC q f~   | Close project              |
+| ~SPC q q~   | Close project              |
+| ~SPC q Q~   | Exit (close all projects)  |
+| ~SPC q r~   | Restart                    |
+| ~SPC q R~   | Invalidate cache           |
+| ~SPC q s~   | Save all and close project |
+
+** registers/rings/resume
+
+| Key binding | Description       |
+|-------------+-------------------|
+| ~SPC r b~   | Recent files      |
+| ~SPC r B~   | Recent files      |
+| ~SPC r e~   | Show registers    |
+| ~SPC r s~   | Search in project |
+| ~SPC r y~   | Show kill ring    |
+
+** search/symbol
+
+| Key binding | Description                     |
+|-------------+---------------------------------|
+| ~SPC s c~   | Clear search highlights         |
+| ~SPC s e~   | Rename symbol                   |
+| ~SPC s h~   | Toggle highlight current symbol |
+| ~SPC s l~   | Search in project               |
+| ~SPC s P~   | Find usages                     |
+| ~SPC s p~   | Search in project               |
+| ~SPC s s~   | Search in project               |
+
+** UI toogles/themes
+
+| Key binding | Description                  |
+|-------------+------------------------------|
+| ~SPC T t~   | Toggle distraction free mode |
+
+** toggles
+
+| Key binding | Description                  |
+|-------------+------------------------------|
+| ~SPC t i~   | Toggle show indent guide     |
+| ~SPC t l~   | Toggle truncate lines        |
+| ~SPC t n~   | Toggle line numbers          |
+| ~SPC t r~   | Toggle relative line numbers |
+| ~SPC t w~   | Toggle show whitespaces      |
+
+** text
+
+| Key binding   | Description                                   |
+|---------------+-----------------------------------------------|
+| ~SPC x c~     | Count words and characters                    |
+| ~SPC x w c~   | Count words and characters                    |
+| ~SPC x d SPC~ | Delete all spaces except one                  |
+| ~SPC x i~     | String inflection (CamelCase plugin required) |
+| ~SPC x J~     | Move lines down                               |
+| ~SPC x K~     | Move lines up                                 |
+| ~SPC x t c~   | Transpose characters                          |
+| ~SPC x t l~   | Transpose lines                               |
+| ~SPC x U~     | Upcase region                                 |
+| ~SPC x u~     | Downcase region                               |
+
+** windows
+
+| Key binding   | Description                  |
+|---------------+------------------------------|
+| ~SPC w /~     | Split window right           |
+| ~SPC w v~     | Split window right           |
+| ~SPC w -~     | Split window below           |
+| ~SPC w s~     | Split window below           |
+| ~SPC w d~     | Close window (with its tabs) |
+| ~SPC w x~     | Close window (with its tabs) |
+| ~SPC w h~     | Focus window left            |
+| ~SPC w LEFT~  | Focus window left            |
+| ~SPC w j~     | Focus window down            |
+| ~SPC w DOWN~  | Focus window down            |
+| ~SPC w k~     | Focus window up              |
+| ~SPC w UP~    | Focus window up              |
+| ~SPC w l~     | Focus window right           |
+| ~SPC w RIGHT~ | Focus window right           |
+| ~SPC w o~     | Focus next project           |
+| ~SPC w p m~   | Show Event Log window        |
+| ~SPC w S~     | Split window below and focus |
+| ~SPC w V~     | Split window right and focus |
+| ~SPC w w~     | Focus next window            |
+
+** zoom
+
+| Key binding | Description        |
+|-------------+--------------------|
+| ~SPC z x +~ | Increase font size |
+| ~SPC z x =~ | Increase font size |
+| ~SPC z x -~ | Decrease font size |
+| ~SPC z x 0~ | Reset font size    |
+
+** miscellaneous
+
+| Key binding | Description                         |
+|-------------+-------------------------------------|
+| ~g,~        | Go to next change                   |
+| ~g;~        | Go to last change                   |
+| ~gd~        | Go to declaration                   |
+| ~zm~        | Collapse all folds                  |
+| ~zr~        | Open all folds                      |
+| ~C-i~       | Jump to previously visited location |
+| ~C-o~       | Jump to lately visited location     |
+| ~M-x~       | Execute an action                   |
+
+* major
+
+** leader
+
+| Key binding | Description   |
+|-------------+---------------|
+| ~SPC m =~   | Reformat code |
+
+** compile
+
+| Key binding | Description                              |
+|-------------+------------------------------------------|
+| ~SPC m c C~ | Compile selected file, package or module |
+| ~SPC m c c~ | Make project                             |
+
+** debug
+
+| Key binding | Description                        |
+|-------------+------------------------------------|
+| ~SPC m d B~ | View breakpoints                   |
+| ~SPC m d b~ | Toggle breakpoint                  |
+| ~SPC m d C~ | Clear all breakpoints              |
+| ~SPC m d c~ | Continue (Go to next breakpoint)   |
+| ~SPC m d D~ | Debug class                        |
+| ~SPC m d d~ | Debug                              |
+| ~SPC m d n~ | Next (Step over)                   |
+| ~SPC m d o~ | Step out (same as "finish" in gdb) |
+| ~SPC m d r~ | Select configuration and debug     |
+| ~SPC m d s~ | Step (Step into)                   |
+
+** go
+
+| Key binding | Description            |
+|-------------+------------------------|
+| ~SPC m g g~ | Go to declaration      |
+| ~SPC m g i~ | Go to implementation   |
+| ~SPC m g t~ | Go to type declaration |
+| ~SPC m g [~ | Go to code block start |
+| ~SPC m g ]~ | Go to code block end   |
+
+** help-hierarchy
+
+| Key binding | Description           |
+|-------------+-----------------------|
+| ~SPC m h c~ | Call hierarchy        |
+| ~SPC m h H~ | Show implementation   |
+| ~SPC m h h~ | Show documentation    |
+| ~SPC m h i~ | Inheritance hierarchy |
+| ~SPC m h t~ | Type definition       |
+| ~SPC m h U~ | Show usages           |
+| ~SPC m h u~ | Find usages           |
+
+** projects
+
+| Key binding | Description    |
+|-------------+----------------|
+| ~SPC m p b~ | Make project   |
+| ~SPC m p c~ | Create project |
+| ~SPC m p i~ | Import project |
+| ~SPC m p o~ | Open project   |
+| ~SPC m p r~ | Run project    |
+
+** refactoring
+
+| Key binding   | Description                                        |
+|---------------+----------------------------------------------------|
+| ~SPC m r C~   | Code cleanup                                       |
+| ~SPC m r c~   | Create constructor                                 |
+| ~SPC m r e m~ | Extract method                                     |
+| ~SPC m r e s~ | Extract superclass                                 |
+| ~SPC m r G~   | Generate getter and setter                         |
+| ~SPC m r g~   | Select what to generate                            |
+| ~SPC m r I~   | Implement Methods                                  |
+| ~SPC m r i~   | Optimize imports                                   |
+| ~SPC m r N~   | Create a new Element                               |
+| ~SPC m r n~   | Create a new class. Also enum, interface and more. |
+| ~SPC m r R~   | Choose a refactoring action                        |
+| ~SPC m r r~   | Rename symbol                                      |
+
+* extra
+
+** leader
+
+| Key binding | Description            |
+|-------------+------------------------|
+| ~SPC [~     | Go to code block start |
+| ~SPC ]~     | Go to code block end   |
+
+** applications
+
+| Key binding | Description |
+|-------------+-------------|
+| ~SPC a t~   | Show TODOs  |
+
+** bookmarks
+
+| Key binding | Description                   |
+|-------------+-------------------------------|
+| ~SPC B l~   | List bookmarks                |
+| ~SPC B N~   | Previous bookmark             |
+| ~SPC B n~   | Next bookmark                 |
+| ~SPC B p~   | Previous bookmark             |
+| ~SPC B T~   | Toggle bookmark with mnemonic |
+| ~SPC B t~   | Toggle bookmark               |
+
+** buffers
+
+| Key binding | Description     |
+|-------------+-----------------|
+| ~SPC b 0~   | Go to first tab |
+| ~SPC b $~   | Go to last tab  |
+| ~SPC b j~   | Previous tab    |
+| ~SPC b k~   | Next tab        |
+
+** compile/comments
+
+| Key binding | Description   |
+|-------------+---------------|
+| ~SPC c b~   | Block comment |
+
+** errors
+
+| Key binding | Description         |
+|-------------+---------------------|
+| ~SPC e L~   | Inspect code        |
+| ~SPC e r~   | Resolve error       |
+| ~SPC e s~   | Inspection settings |
+
+** frame
+
+| Key binding | Description            |
+|-------------+------------------------|
+| ~SPC F O~   | Focus previous project |
+
+** files
+
+| Key binding | Description                                        |
+|-------------+----------------------------------------------------|
+| ~SPC f N~   | Create a new Element                               |
+| ~SPC f n~   | Create a new class. Also enum, interface and more. |
+
+** git/versions control
+
+| Key binding | Description                        |
+|-------------+------------------------------------|
+| ~SPC g b~   | Git branches (checkout)            |
+| ~SPC g G~   | Version control tool window        |
+| ~SPC g g~   | Select a version control operation |
+| ~SPC g p~   | Push                               |
+| ~SPC g S~   | Show shelf                         |
+
+** help/history
+
+| Key binding | Description                     |
+|-------------+---------------------------------|
+| ~SPC h a~   | Show action list                |
+| ~SPC h h~   | Show changes in current file    |
+| ~SPC h v~   | Visit JetBrains youtube channel |
+
+** jump
+
+| Key binding | Description                     |
+|-------------+---------------------------------|
+| ~SPC j c~   | Jump to class                   |
+| ~SPC j e~   | Jump to element in current file |
+| ~SPC j s~   | Jump to symbol                  |
+
+** run
+
+| Key binding | Description                  |
+|-------------+------------------------------|
+| ~SPC R a~   | Run Anything                 |
+| ~SPC R c~   | Run class                    |
+| ~SPC R k~   | Stop application (Kill)      |
+| ~SPC R r~   | Run                          |
+| ~SPC R s~   | Select configuration and run |
+
+** search
+
+| Key binding | Description             |
+|-------------+-------------------------|
+| ~SPC s E~   | Search everywhere       |
+| ~SPC s f~   | Search in current file  |
+| ~SPC s r~   | Replace in current file |
+
+** UI toggles/themes
+
+| Key binding | Description                                  |
+|-------------+----------------------------------------------|
+| ~SPC T m~   | Hide all windows except the ones with code   |
+| ~SPC T p~   | Toggle presentation mode                     |
+| ~SPC T T~   | Toggle presentation or distraction free mode |
+
+** toggles
+
+| Key binding | Description         |
+|-------------+---------------------|
+| ~SPC t g~   | Toggle Gutter icons |
+| ~SPC t p~   | Toggle power save   |
+
+** windows
+
+| Key binding | Description                     |
+|-------------+---------------------------------|
+| ~SPC w H~   | Focus window far left           |
+| ~SPC w J~   | Focus window very bottom        |
+| ~SPC w K~   | Focus window very top           |
+| ~SPC w L~   | Focus window far right          |
+| ~SPC w m~   | Show only code windows          |
+| ~SPC w O~   | Move tab to the opposite window |
+
+** zoom
+
+| Key binding | Description        |
+|-------------+--------------------|
+| ~SPC z +~   | Increase font size |
+| ~SPC z =~   | Increase font size |
+| ~SPC z -~   | Decrease font size |
+| ~SPC z 0~   | Reset font size    |

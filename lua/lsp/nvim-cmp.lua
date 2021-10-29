@@ -9,6 +9,11 @@ end
 
 vim.opt.completeopt = "menuone,noselect"
 
+-- Have copilot play nice with nvim-cmp.
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -52,13 +57,39 @@ cmp.setup({
 			elseif has_words_before() then
 				cmp.complete()
 			else
+				local copilot_keys = vim.fn["copilot#Accept"]()
+				if copilot_keys ~= "" then
+					vim.api.nvim_feedkeys(copilot_keys, "i", true)
+				else
+					fallback()
+				end
+			end
+		end, {
+			"i",
+			"s",
+		}),
+		["<Right>"] = cmp.mapping(function(fallback)
+			local copilot_keys = vim.fn["copilot#Accept"]()
+			if copilot_keys ~= "" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
+			else
 				fallback()
 			end
 		end, {
 			"i",
 			"s",
 		}),
-
+		["<C-e>"] = cmp.mapping(function(fallback)
+			local copilot_keys = vim.fn["copilot#Accept"]()
+			if copilot_keys ~= "" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -78,7 +109,7 @@ cmp.setup({
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
+		-- ["<C-e>"] = cmp.mapping.close(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,

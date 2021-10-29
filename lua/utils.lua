@@ -97,5 +97,12 @@ end
 -- 		vim.cmd("hi " .. group_name .. " guifg=" .. group_settings)
 -- 	end
 -- end
+M.toggle_copilot = function()
+	if vim.g.loaded_copilot == 1 then
+		vim.cmd("Copilot disable")
+	else
+		vim.cmd("Copilot enable")
+	end
+end
 
 return M

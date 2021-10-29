@@ -2,31 +2,31 @@
 """ spacemacs defaults
 
 " Settings
-source ~/.intellimacs/extra/settings.vim
+source ~/.config/nvim/ideavim/extra/settings.vim
 
 " Key bindings
-source ~/.intellimacs/extra/applications.vim
+source ~/.config/nvim/ideavim/extra/applications.vim
 
 let g:WhichKeyDesc_Bookmarks = "<leader>B    +bookmarks"
-source ~/.intellimacs/extra/bookmarks.vim
-source ~/.intellimacs/extra/buffers.vim
-source ~/.intellimacs/extra/compile-comments.vim
-source ~/.intellimacs/extra/errors.vim
-source ~/.intellimacs/extra/files.vim
-source ~/.intellimacs/extra/frame.vim
-source ~/.intellimacs/extra/git-vcs.vim
+source ~/.config/nvim/ideavim/extra/bookmarks.vim
+source ~/.config/nvim/ideavim/extra/buffers.vim
+source ~/.config/nvim/ideavim/extra/compile-comments.vim
+source ~/.config/nvim/ideavim/extra/errors.vim
+source ~/.config/nvim/ideavim/extra/files.vim
+source ~/.config/nvim/ideavim/extra/frame.vim
+source ~/.config/nvim/ideavim/extra/git-vcs.vim
 
 let g:WhichKeyDesc_Help = "<leader>h    +help/history"
-source ~/.intellimacs/extra/help-history.vim
+source ~/.config/nvim/ideavim/extra/help-history.vim
 
-source ~/.intellimacs/extra/jump.vim
-source ~/.intellimacs/extra/leader.vim
+source ~/.config/nvim/ideavim/extra/jump.vim
+source ~/.config/nvim/ideavim/extra/leader.vim
 
 let g:WhichKeyDesc_Run = "<leader>R    +run"
-source ~/.intellimacs/extra/run.vim
+source ~/.config/nvim/ideavim/extra/run.vim
 
-source ~/.intellimacs/extra/search.vim
-source ~/.intellimacs/extra/toggles.vim
-source ~/.intellimacs/extra/ui_toggles-themes.vim
-source ~/.intellimacs/extra/windows.vim
-source ~/.intellimacs/extra/zoom.vim
+source ~/.config/nvim/ideavim/extra/search.vim
+source ~/.config/nvim/ideavim/extra/toggles.vim
+source ~/.config/nvim/ideavim/extra/ui_toggles-themes.vim
+source ~/.config/nvim/ideavim/extra/windows.vim
+source ~/.config/nvim/ideavim/extra/zoom.vim

@@ -24,5 +24,5 @@ set smartcase
 " Emulate vim-surround. Commands: ys, cs, ds, S.
 set surround
 
-" Emulate NERDTree
+" NerdTree
 set NERDTree

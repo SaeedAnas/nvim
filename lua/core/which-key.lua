@@ -54,6 +54,9 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", default_opts)
 vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", default_opts)
 
+-- Search and Replace
+vim.api.nvim_set_keymap("v", "<leader>m", ":lua require('spectre').open_visual()<cr>", default_opts)
+
 -- Which-key mappings
 local mappings = {
 	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
@@ -64,6 +67,7 @@ local mappings = {
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Filetree" },
 	["r"] = { "<cmd>RnvimrToggle<cr>", "Ranger" },
 	["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
+	["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" },
 	["/"] = "Comment",
 	["1"] = { "1gt", "Tab 1" },
 	["2"] = { "2gt", "Tab 2" },
@@ -79,6 +83,8 @@ local mappings = {
 	["q"] = { "<cmd>q<cr>", "quit" },
 	["Q"] = { "<cmd>qa!<cr>", "Quit all" },
 	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
+	["m"] = { "<cmd>lua require('spectre').open()<cr>", "Search and Replace" },
+	["c"] = { "<cmd>lua require('utils').toggle_copilot()<cr>", "Toggle Copilot" },
 	s = {
 		name = "+Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

@@ -105,9 +105,6 @@ return require("packer").startup({
 		-- Indent blankline
 		use("lukas-reineke/indent-blankline.nvim")
 
-		-- Smooth Scroll
-		use("karb94/neoscroll.nvim")
-
 		-- TODO: LSP
 		-- Lspconfig
 		use("neovim/nvim-lspconfig")
@@ -143,14 +140,17 @@ return require("packer").startup({
 
 		-- Org Mode
 		use({ "kristijanhusak/orgmode.nvim", branch = "tree-sitter" })
-
 		-- TODO:
 		-- Search and replace
-		-- use 'windwp/nvim-spectre'
+		use("windwp/nvim-spectre")
+
+		use("github/copilot.vim")
+
 		-- Codi
 		-- use 'metakirby5/codi.vim'
-		-- Bracey
-		-- use 'turbio/bracey.vim'
+
+		-- Live website editing
+		use({ "turbio/bracey.vim", run = "npm install --prefix server" })
 	end,
 	config = {
 		compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",

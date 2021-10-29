@@ -20,9 +20,6 @@ vnoremap <leader>feR    <Esc>:source ~/.ideavimrc<CR>
 """ ---------------------------------------------
 
 " Find files
-let g:WhichKeyDesc_Files_GotoFileAlt = "<leader>fF goto-file"
-nnoremap <leader>fF    :action GotoFile<CR>
-vnoremap <leader>fF    :action GotoFile<CR>
 let g:WhichKeyDesc_Files_GotoFile = "<leader>ff goto-file"
 nnoremap <leader>ff    :action GotoFile<CR>
 vnoremap <leader>ff    :action GotoFile<CR>
@@ -54,9 +51,6 @@ vnoremap <leader>fs    :action SaveDocument<CR>
 let g:WhichKeyDesc_Files_FileTree = "<leader>ft file-tree"
 nnoremap <leader>ft    :action ActivateProjectToolWindow<CR>
 vnoremap <leader>ft    :action ActivateProjectToolWindow<CR>
-
-""" Yank/Copy Submenu ---------------------------------
-let g:WhichKeyDesc_Files_YankCopy = "<leader>fy +Yank/Copy"
 
 " Copy file path
 let g:WhichKeyDesc_Files_YankCopy_FilePath = "<leader>fyy file-path"

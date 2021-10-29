@@ -85,6 +85,7 @@ local mappings = {
 	["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
 	["m"] = { "<cmd>lua require('spectre').open()<cr>", "Search and Replace" },
 	["c"] = { "<cmd>lua require('utils').toggle_copilot()<cr>", "Toggle Copilot" },
+	["u"] = { "<cmd>TermToggle<cr>", "terminal" },
 	s = {
 		name = "+Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -147,7 +148,7 @@ local mappings = {
 
 wk.register(mappings, opts)
 
--- File specific
+-- File specific mappings
 vim.g.maplocalleader = ","
 
 local u = require("utils")
@@ -165,6 +166,7 @@ function SetFileKeybinds()
 	if fileTy == "rust" then
 		wk.register({
 			["c"] = { "<cmd>RustOpenCargo<cr>", "open cargo" },
+			["u"] = { "<cmd>lua require('core.term').run_rust()<cr>", "Cargo Run" },
 		}, local_opts)
 	elseif fileTy == "lua" then
 		wk.register({
@@ -172,11 +174,11 @@ function SetFileKeybinds()
 		}, local_opts)
 	elseif fileTy == "python" then
 		wk.register({
-			["t"] = { "test-python", "test-python" },
+			["u"] = { "<cmd>lua require('core.term').run_python()<cr>", "run current file" },
 		}, local_opts)
 	elseif fileTy == "java" then
 		wk.register({
-			["t"] = { "test-java", "test-java" },
+			["u"] = { "<cmd>lua require('core.term').run_java()<cr>", "run current file" },
 		}, local_opts)
 	end
 end

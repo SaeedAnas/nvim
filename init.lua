@@ -21,6 +21,7 @@ require("core.others")
 -- ui plugins
 require("ui.dashboard")
 require("ui.buffer")
+require("ui.cmd")
 
 -- lsp plugins
 require("lsp.lsp")

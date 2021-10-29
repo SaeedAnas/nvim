@@ -48,6 +48,9 @@ return require("packer").startup({
 		use("kyazdani42/nvim-tree.lua")
 		use("kevinhwang91/rnvimr")
 
+		-- Terminal
+		use("numtostr/FTerm.nvim")
+
 		-- tmux
 		use("aserowy/tmux.nvim")
 
@@ -104,6 +107,11 @@ return require("packer").startup({
 
 		-- Indent blankline
 		use("lukas-reineke/indent-blankline.nvim")
+
+		-- Wilder
+		use("gelguy/wilder.nvim")
+		use({ "nixprime/cpsm", run = "./install.sh" })
+		use("romgrk/fzy-lua-native")
 
 		-- TODO: LSP
 		-- Lspconfig

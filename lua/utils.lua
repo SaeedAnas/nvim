@@ -98,7 +98,8 @@ end
 -- 	end
 -- end
 M.toggle_copilot = function()
-	if vim.g.loaded_copilot == 1 then
+	local copilot_enabled = vim.fn["copilot#Enabled"]()
+	if copilot_enabled == 1 then
 		vim.cmd("Copilot disable")
 	else
 		vim.cmd("Copilot enable")
